@@ -1,0 +1,213 @@
+header{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../images/header-banner.jpg);
+    background-size: cover;
+    color:$white;
+   
+
+
+    nav{
+
+        width: 80%;
+        margin:0 auto;
+     
+        .navigation{
+            margin-left: 20vw;
+            white-space: nowrap;
+            
+        }
+
+        h5{
+            display: none;
+        }
+
+
+        a{
+            color: $white;
+            margin-left: 1em;
+            
+        
+            &:hover {
+            color: $pink;
+            transition: 1s ease;
+            }
+        }
+        
+
+        li:last-of-type{
+            border: 1px solid $pink;
+            border-radius: 20px;
+            background-color: $pink;
+            margin-left: 5px;
+            transition: box-shadow 1s;
+
+            a{
+                margin-left: 0em;
+
+                &:hover{
+                    color:$white;
+                }
+            }
+
+            &:hover{
+                box-shadow:0 3px 19.53px 1.47px $pink-shadow;
+            }
+        }
+
+        
+
+    }
+
+    .header-content button{
+        @include general-buttons;
+        margin-top: 20px;
+    }
+
+    .header-img{
+        position: absolute;
+        width: inherit;
+        height:inherit;
+        top: 67%;
+        left: 30%;
+        
+        img{
+            width: 60%;
+        }
+
+    }
+}
+
+
+
+
+
+/*Navigation menu on smaller screens*/
+
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background-color: $pink;
+        position: absolute;
+        top: 0px;
+        height: 100vh;
+        width: 80%;
+        right: 100%;
+        transition: all 0.3s ease;
+        display: block;
+        z-index:1;
+        
+
+        li{
+            transition: background-color 0.3s ease;
+            border-bottom: 1px solid $white;
+            &:hover{
+                background-color: rgb(53,60,76);
+            }
+            
+            &:first-child:hover{
+                background-color:$pink;
+            }
+
+            h5{
+                display: block;
+                padding-top: 5vh;
+                color:$white;
+                margin-left: 5vw; 
+                
+            }
+            a {
+                margin-left: 5vw;
+
+                &:hover {
+                color:$white;
+                }
+            }
+        }
+
+        li:last-of-type{
+            border: none;
+            border-radius: 0px;
+            background-color: $pink;
+            margin-left: 0;
+           
+            
+            &:hover{
+                background-color: rgb(53,60,76);
+            }
+
+            a {
+                margin-left: 5vw;
+            }
+    }
+    }
+    .navbar-collapse.collapsing {
+        height: auto;
+        margin-left: 50%;
+        transition: all 0.3s ease;
+        display: block;
+    }
+    .navbar-collapse.show {
+        left: 20%;
+    }
+
+    /* collapse button */
+
+    .animated-icon1 {
+        width: 30px;
+        height: 20px;
+        position: relative;
+        bottom: 1vh;
+        margin: 0px;
+        transform: rotate(0deg);
+        transition: .5s ease-in-out;
+        cursor: pointer;
+        z-index: 2;
+    }
+        
+    .animated-icon1 span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+    }
+        
+    .animated-icon1 span {
+        background: $pink;
+    }
+        
+    .animated-icon1 span:nth-child(1) {
+        top: 0px;
+    }
+        
+    .animated-icon1 span:nth-child(2) {
+        top: 10px;
+    }
+        
+    .animated-icon1 span:nth-child(3) {
+        top: 20px;
+    }
+        
+    .animated-icon1.open span:nth-child(1) {
+        top: 11px;
+        background: $white;
+        transform: rotate(135deg);
+    }
+    
+    .animated-icon1.open span:nth-child(2) {
+    opacity: 0;
+    }
+    
+    .animated-icon1.open span:nth-child(3) {
+        top: 11px;
+        background: $white;
+        transform: rotate(-135deg);
+    }
+    
+  
+}
