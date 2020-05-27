@@ -1,0 +1,253 @@
+header{
+    background-image: url('/resources/img/header-banner.jpg');
+    background-position: cover;
+    height: 100vh;
+    position: relative;
+}
+
+/* Collapse button*/
+
+.hamburger{
+    width: 30px;
+    height: 20px;
+    position: relative;
+    margin: 0px;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    z-index:4;
+    }
+    
+    .hamburger span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+    }
+    
+    .hamburger span {
+    background: $pink;
+    }
+
+
+    .hamburger span:nth-child(1) {
+        top: 0px;
+        
+        }
+        
+    .hamburger span:nth-child(2) {
+    top: 10px;
+    }
+    
+    .hamburger span:nth-child(3) {
+    top: 20px;
+    }
+    
+    .hamburger.open span:nth-child(1) {
+    top: 11px;
+    transform: rotate(135deg);
+    background: $white;
+    }
+    
+    .hamburger.open span:nth-child(2) {
+    opacity: 0;
+    }
+    
+    .hamburger.open span:nth-child(3) {
+    top: 11px;
+    transform: rotate(-135deg);
+    background: $white;
+    }
+
+    // navigation style 
+    .main-nav{
+        width:100%;
+        margin: 0 auto;
+        padding: 3rem;
+    }
+
+
+   .navtitle{
+       display: none;
+   }
+   
+    .navListItem a{
+        color: $white;
+        transition: all 1s ease;
+
+        &:hover, &:active{
+            color:$pink
+
+        }
+    }
+
+    .navListItem .button{
+      @include general-button;
+      margin-top: 0.2rem;
+    }
+
+/* Main content header */
+.headerImg{
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   max-width: 30rem;  
+   z-index: 1;
+
+}
+
+.header-banner{
+    position: relative;
+    z-index: 2;
+    color: $white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 1rem;
+    
+    
+    h2{
+        font-size: 60px;
+        font-weight: 700;
+        margin:0;
+       
+    }
+    small{
+        font-size: 30px;
+        font-weight: 300;
+     
+    }
+      
+    
+    h3{
+        font-size: 40px;
+        font-weight: 700;
+        margin:0;
+       
+    }
+
+    .get-started{
+        @include general-button;
+        width:180px;
+        text-align: center;
+        margin-top: 2rem;
+        padding: 0.5rem 1rem 0.5rem  1rem;
+        transform: all 1s ease;
+      
+       
+        
+
+        a{
+        color: $white;
+        text-decoration: none;
+       
+        }
+    }
+
+
+}
+        
+/*----------------------Smaller screens-----------------------------*/
+
+@media (max-width: 992px) {
+    // Sidebar slide 
+    .navbar-collapse {
+        position: absolute;
+        top: 0px;
+        left: 100%;
+        width: 100%;
+        height: 100vh;
+        transition: all 0.3s ease;
+        display: block;
+        z-index: 3;
+    }
+    .navbar-collapse.collapsing {
+        height: auto !important;
+        margin-left: 50%;
+        transition: all 0.3s ease;
+        display: block;
+    }
+    .navbar-collapse.show {
+        left: 0;
+    
+    }
+
+    //sidebar style
+    .sidebar-style{
+        background-color:$pink;
+    }
+
+    .navList{
+        margin-top: 0rem;
+       
+
+        &:first-child{
+            color:$white;
+            margin-top: 4.5rem;
+            margin-bottom: 4rem;;
+            .navtitle{
+                display: block;
+                font-size: 120%;
+                margin-left: 2rem;
+                margin-bottom: 1rem;
+                font-weight: bolder;   
+            }
+        }
+        
+    }
+
+    .navListItem {
+       border-bottom: 1px solid $white;
+       font-weight: bold;
+        
+        a{
+            color: $white;
+            transition: all 1s ease;
+            margin-left: 2rem;
+
+            &:hover, &:active{
+                color:$white;
+                background: rgba(47, 47, 47, 1);
+
+
+            }
+
+        }
+
+        .button{
+            font-weight: bold;
+            background-color: transparent;
+            border: none;
+            padding-top:8px;
+            padding-bottom: 8px;
+            margin-left: 2rem;
+            
+            
+            &:hover{
+               box-shadow: 0 0px 0px 0px rgba(228,19,100,.75)
+            }
+        }
+
+
+    }
+
+    // people image 
+    .headerImg{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        max-width: 50%;
+        
+     
+    }
+
+    
+    
+}
+
+

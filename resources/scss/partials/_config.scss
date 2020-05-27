@@ -1,0 +1,29 @@
+$pink:#f8315a;
+$white: white;
+@mixin general-button {
+    color: $white;
+    background-color: $pink;
+    border: 1px solid $pink;
+    border-radius:1rem;
+    cursor: pointer;
+    
+    &:hover{
+       box-shadow: 0 3px 19.53px 1.47px rgba(228,19,100,.75)
+    }
+
+}
+
+body{
+    body {
+        margin: 0;
+        font-family: 'Roboto','Open Sans','sans-serif';
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        text-align: left;
+        background-color: #fff;
+        overflow: hidden;
+    }
+
+}

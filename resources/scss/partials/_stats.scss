@@ -1,0 +1,74 @@
+.stats{
+
+    background-image: url('/resources/img/statistics-bg.png');
+    background-size: stretch;
+    padding-top:3rem;
+    padding-bottom:3rem;
+    font-size: 1.5em;
+
+    // Virus images 
+   
+    .crop{
+        width: 80px;
+        height: 80px;
+        overflow: hidden;
+       
+       
+     img{
+        position: relative;
+        
+         &:hover{
+             
+             top: -72px;
+         }
+     }
+    
+    }
+    
+     .virus-img2{ 
+        right: 70px; 
+      
+     }
+
+
+     .virus-img3{ 
+        right: 140px; 
+      
+     }
+
+     .virus-img4{ 
+        right: 210px; 
+      
+     }
+
+    .stat-info h4{
+        font-weight: 700;
+    }
+
+    .stat-info1{
+        color:#FF415B;
+    }
+
+    .stat-info2{
+        color:#E13588;
+    }
+
+    .stat-info3{
+        color:#A533D7;
+    }
+
+    .stat-info4{
+        color:#F9871D;
+    }
+    
+
+    
+}
+
+/*----------------------Smaller screens-----------------------------*/
+
+@media (max-width: 992px) {
+    .stats{
+        font-size: 1em;
+    }
+}
