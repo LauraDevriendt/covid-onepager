@@ -1,0 +1,117 @@
+#symptoms{
+    @extend .section-divider;
+    background-image: url('/resources/img/symptoms-bg.png');  
+   
+
+    .symptom-title{
+        @extend .h1-info-element;
+    
+   
+    }
+
+    span{
+        @extend .span-info-element;
+        margin-bottom: 2rem;
+        font-size:0.9rem;
+    }   
+
+
+
+
+
+
+
+.symptom-container{
+
+    h5{
+        @extend .h5-info-element;
+        margin-top: 1rem;
+    }
+
+    p{
+        @extend .p-info-element
+    }
+   
+    &:hover{
+
+        .image-container{
+            border: 3px solid $white; 
+        }
+        
+       
+        .img-row1{
+            top: -22rem;
+            background-color: $pink;
+
+        }
+
+
+        .img-row2{
+            top: -28rem;
+            background-color: $pink;
+
+        }
+
+        h5{
+            color: $pink
+        }
+       
+    }
+   
+    
+
+
+
+    
+}
+
+.image-container{
+    color:$gray;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    overflow:hidden;
+  
+   border: 2px dotted $gray;
+   border-radius: 50%;
+    .img-row1{
+        position: absolute;
+        top:-10.2rem;
+        transition: all 0.6s ease;
+
+    }
+
+    .img-row2{
+        position: absolute;
+        top:-16rem;
+        left: -0.4rem;
+        transition: all 0.6s ease;
+
+    }
+
+   
+
+    .symptom2{
+        left:-7.5rem
+
+    }
+
+    .symptom3{
+        left:-15.1rem
+
+    }
+
+    .symptom5{
+        left:-7.8rem
+
+    }
+
+    .symptom6{
+        left:-15rem
+
+    }
+
+ }
+}
+
+

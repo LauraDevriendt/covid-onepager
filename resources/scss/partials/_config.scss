@@ -20,6 +20,13 @@ $light-gray:#6b6b6b;
     padding-bottom:3rem;
 }
 
+.h1-info-element{
+    color: $gray;
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: capitalize;
+}
+
 .h3-info-element{
     color: $gray;
     font-size: 2.3rem;
@@ -35,6 +42,13 @@ $light-gray:#6b6b6b;
     margin-top: 2rem;
 }
 
+.h5-info-element{
+    color: $gray;
+    font-weight:700;
+    font-size:1.2rem;
+    
+}
+
 .span-info-element{
     color: $light-gray;
     font-style: italic;
@@ -43,6 +57,8 @@ $light-gray:#6b6b6b;
     text-transform: capitalize;
    
 }
+
+
 
 
 .p-info-element{
@@ -65,6 +81,7 @@ body{
         text-align: left;
         background-color: #fff;
         overflow: hidden;
+        overflow-y: hidden;
     }
 
 }

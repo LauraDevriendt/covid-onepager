@@ -1,0 +1,71 @@
+#protection{
+   
+
+    h5{
+        @extend .h5-info-element;
+        margin-top: 1rem;
+    }
+
+    p{
+        @extend .p-info-element;
+        font-size: 1rem;
+    }
+   
+
+    .protection-container{
+
+        &:hover{
+
+            .image-container{
+                border: 3px solid $white; 
+            }
+            
+           
+            img{
+                top: -46.4rem;
+                background-color: $pink;
+    
+            }
+    
+    
+            h5{
+                color: $pink
+            }
+           
+        }
+
+        .protect-container{
+
+
+
+            .image-container{
+                overflow: hidden;
+                position: relative;
+                width: 280px;
+                height: 90px;
+                border: 1px solid $gray;
+                border-radius: 50%;
+                margin-bottom: 2.8rem;
+                margin-left: 1rem;
+                margin-right: 1rem;
+            
+            img{
+            
+                position: absolute;
+                top:-34.6rem;
+                left: -0.9rem;
+                transition: all 0.6s ease;
+            
+                
+            }
+            
+            }
+
+        }
+      
+    } 
+
+
+    
+
+};
