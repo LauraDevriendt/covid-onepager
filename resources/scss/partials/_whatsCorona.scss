@@ -1,0 +1,32 @@
+.def-corona-section{
+
+    @extend .section-divider;
+    box-shadow: inset 0px 21px 15px 0px rgba(244,244,244,1);
+  
+
+    img{
+        width: 550px
+    }
+
+    h3{
+
+        @extend .h3-info-element;
+
+    }
+
+
+    h4{
+        @extend .h4-info-element;
+    }
+
+    span{
+        @extend .span-info-element;
+    }
+
+    p{
+        @extend .p-info-element;
+    }
+
+
+ 
+}

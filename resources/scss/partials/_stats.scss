@@ -1,22 +1,25 @@
 .stats{
 
     background-image: url('/resources/img/statistics-bg.png');
-    background-size: stretch;
-    padding-top:3rem;
-    padding-bottom:3rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @extend .section-divider;
     font-size: 1.5em;
+    
 
     // Virus images 
    
     .crop{
+        position: relative;
         width: 80px;
         height: 80px;
         overflow: hidden;
-       
-       
-     img{
-        position: relative;
         
+        
+     img{
+        top:0px;
+        position: absolute;
+        transition: all 2s ease;
          &:hover{
              
              top: -72px;
