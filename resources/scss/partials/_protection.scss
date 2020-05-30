@@ -1,5 +1,9 @@
 #protection{
-   
+    @extend .section-divider;
+
+   h3{
+       @extend .h3-info-element;
+   }
 
     h5{
         @extend .h5-info-element;
@@ -10,38 +14,57 @@
         @extend .p-info-element;
         font-size: 1rem;
     }
+    span{
+       
+        @extend .span-info-element;
+        text-align: center;
+        width: inherit;
+    }
    
 
     .protection-container{
+        position: relative;
+        overflow: hidden;
 
-        &:hover{
+       .protect-bg{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 500px;
+        height: 500px;
+        margin-top: -250px; /* Half the height */
+        margin-left: -250px; /* Half the width */
+            z-index: -1;
+       }
 
-            .image-container{
-                border: 3px solid $white; 
-            }
-            
-           
-            img{
-                top: -46.4rem;
-                background-color: $pink;
-    
-            }
-    
-    
-            h5{
-                color: $pink
-            }
-           
-        }
+       .row1{
+        position: relative;
+        top:1rem;
+        left: 4rem;
+        z-index: 2;
+       }
+
+       .row2{
+        position: relative;
+        top:1rem;
+        right: 4rem;
+        z-index: 2;
+       }
+       
+     
+        
 
         .protect-container{
 
-
+            width: inherit;
+            max-width: 450px;
+           
 
             .image-container{
+                
                 overflow: hidden;
                 position: relative;
-                width: 280px;
+                width: 180px;
                 height: 90px;
                 border: 1px solid $gray;
                 border-radius: 50%;
@@ -49,23 +72,81 @@
                 margin-left: 1rem;
                 margin-right: 1rem;
             
-            img{
-            
-                position: absolute;
-                top:-34.6rem;
-                left: -0.9rem;
-                transition: all 0.6s ease;
-            
                 
-            }
+                
+                
+                img{
+            
+                    position: absolute;
+                    top:-34.6rem;
+                    left: -0.9rem;
+                    transition: all 0.6s ease;
+                
+                    
+                }
+                
+                .protect2{
+                    left: -8rem;
+                }
+
+                .protect3{
+                    left: -15.3rem;
+                }
+
+                .protect4, .protect5, .protect6{
+                    top:-40.6rem;
+                    left: -0.5rem;
+                }
+
+                .protect5{
+                    top: -40.5rem;
+                    left: -8rem;
+                }
+
+                .protect6{
+                    left: -15.2rem;
+                }
+                
+                
+                
             
             }
 
+
+            &:hover{
+
+                .image-container{
+                    border: 3px solid $white; 
+                }
+                
+               
+                img{
+                    top: -46.4rem;
+                    background-color: $pink;
+        
+                }
+
+                .protect4, .protect5, .protect6{
+                    top:-52.6rem;
+                    
+                }
+        
+        
+                h5{
+                    color: $pink
+                }
+
+               
+                
+
+            }
+
+       
         }
       
     } 
 
-
+    
     
 
 };

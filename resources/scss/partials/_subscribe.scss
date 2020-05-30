@@ -1,0 +1,106 @@
+#subscribe{
+    @extend .section-divider;
+    background: url(/resources/img/subscribe-bg.jpg);
+    background-size: cover;
+    background-position: right bottom;
+
+    .subscribe-container{
+
+
+        .content-container{
+            margin-left: 2rem;
+            margin-right: 8rem;
+            h3{
+                white-space: nowrap;
+                color: white;
+                @extend .h3-info-element;
+                margin: 0;
+            }
+            
+            h4{
+                white-space: nowrap;
+                color: white;
+                @extend .h4-info-element;
+                margin: 0px;
+            }
+            
+
+        }
+        
+        
+        
+        form{
+            position: relative;
+            margin-top: 1rem;
+            width: 60%;
+
+            input{
+                border-radius: 3rem;
+                height: 3rem;
+                background: #16253cad;
+                border: 1px solid #283d5cfa;
+            }
+
+            .subscribe-btn{
+                @include general-button;
+                font-weight: 300;
+                border-radius: 3rem;
+                height: 3rem;
+                width: 12rem;
+                right: -0.1rem;
+                position: absolute;
+                
+            }
+        }
+        
+    }
+
+
+}
+
+
+
+@media only screen and (max-width: 668px) {
+    #subscribe{
+    .content-container{
+        margin-left: 1rem;
+        margin-right: 1rem !important;
+    }
+
+    #subscribe{
+        padding-bottom: 12rem;
+    }
+
+    form{
+        margin-right: 2rem;
+        width: 100%;
+    }
+
+    .subscribe-btn{
+        right: 1rem;
+        top: 4rem;
+       
+    }
+}
+
+}
+  
+
+@media only screen and (min-width: 668px) and (max-width: 768px) {
+    #subscribe{
+        padding-bottom: 5rem;
+   
+    form{
+        margin-right: 2rem;
+    }
+
+    .subscribe-btn{
+        right: 1rem;
+        top: 4rem;
+       
+    }
+
+}
+
+}
+  
