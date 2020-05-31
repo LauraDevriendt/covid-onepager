@@ -1,0 +1,112 @@
+#doctorsContainer{
+    @extend .section-divider;
+    text-align: center;
+    margin: 0 auto;
+  
+    .row{
+        display: flex;
+        justify-content: center;
+    }
+    
+  
+    h3{
+      @extend .h3-info-element;
+      
+    }
+    
+    span{
+      @extend .span-info-element;
+     
+    }
+
+    .doctor-card{
+        position: relative;
+        margin-top: 2rem;
+        margin-right: 2rem;
+        padding: 0;
+        max-width: 350px;
+        transform: all 0.6s ease;
+        white-space: nowrap;
+        
+       .overlay{
+           display: none;
+           
+       }
+
+        h6{
+            color:$light-gray
+        }
+
+        &:hover{
+
+            box-shadow: 0px 0px 28px 0px rgba(32, 32, 32, 0.336);
+ 
+            .member-body{
+                position: relative;
+                z-index: 3;
+                background: $pink;
+                color: $white;
+               h6{
+                   color:$white;
+               }
+            }
+
+            .overlay{
+            
+                position: absolute;
+                background-color: rgba(53, 60, 76, 0.753);
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: flex;
+                justify-content: center;
+                align-items:center;
+                transition: all 0.6 ease;
+                z-index:2;
+    
+                i{
+                    cursor:pointer;
+                    margin-right: 0.2rem;
+                    margin-bottom: 2rem;
+                    min-width: 30px;
+                    padding: 0.5rem;
+                    border: 1px solid rgba(41, 40, 40, 0.288);
+                }
+    
+                .fa-facebook-f{
+                    color: #3b5998;
+                    transition: all 0.6 ease;
+                    &:hover{
+                        background: white;
+                    }
+                }
+    
+                .fa-twitter{
+                    color: #1da1f2;
+                    transition: all 0.6 ease;
+                    &:hover{
+                        background: white;
+                    }
+                }
+    
+                .fa-linkedin{
+                    color: #007bb5;
+                    transition: all 0.6 ease;
+                    &:hover{
+                        background: white;
+                    }
+                }
+    
+                .fa-google-plus-g{
+                    color: #ea4335;
+                    transition: all 0.6 ease;
+                    &:hover{
+                        background: white;
+                    }
+                }
+            }
+
+        }
+    }
+}
