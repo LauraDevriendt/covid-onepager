@@ -25,7 +25,7 @@
         margin-right: 2rem;
         padding: 0;
         max-width: 350px;
-        transform: all 0.6s ease;
+        transition: all 0.6s ease;
         white-space: nowrap;
         
        .overlay{
@@ -52,7 +52,8 @@
             }
 
             .overlay{
-            
+
+                transition: all 0.6 ease;
                 position: absolute;
                 background-color: rgba(53, 60, 76, 0.753);
                 top: 0;
@@ -72,11 +73,12 @@
                     min-width: 30px;
                     padding: 0.5rem;
                     border: 1px solid rgba(41, 40, 40, 0.288);
+                    
                 }
     
                 .fa-facebook-f{
                     color: #3b5998;
-                    transition: all 0.6 ease;
+                   
                     &:hover{
                         background: white;
                     }

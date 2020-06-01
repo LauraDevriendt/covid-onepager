@@ -32,7 +32,7 @@
         form{
             position: relative;
             margin-top: 1rem;
-            width: 60%;
+            width: 100%;
 
             input{
                 border-radius: 3rem;
@@ -46,7 +46,7 @@
                 font-weight: 300;
                 border-radius: 3rem;
                 height: 3rem;
-                width: 12rem;
+                width: 8rem;
                 right: -0.1rem;
                 position: absolute;
                 
@@ -55,12 +55,31 @@
         
     }
 
+   
+        
 
 }
 
 
+@media screen and (max-width:568px) {
+    #subscribe{
+        .subscribe-container{
+           flex-direction: column; 
+           margin-left: 1rem;
+           margin-right: 1rem;
 
-@media only screen and (max-width: 668px) {
+      
+        }
+
+      
+       
+    }   
+    
+    
+}
+
+
+@media only screen and (min-width: 568px) and (max-width: 668px) {
     #subscribe{
     .content-container{
         margin-left: 1rem;
@@ -84,6 +103,9 @@
 }
 
 }
+
+
+
   
 
 @media only screen and (min-width: 668px) and (max-width: 768px) {
