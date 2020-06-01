@@ -5,6 +5,7 @@
 
     .symptom-title{
         @extend .h1-info-element;
+        text-align: center;
     
    
     }
@@ -13,6 +14,8 @@
         @extend .span-info-element;
         margin-bottom: 2rem;
         font-size:0.9rem;
+        text-align: center;
+       
     }   
 
 
@@ -109,6 +112,32 @@
     .symptom6{
         left:-15rem
 
+    }
+
+    &:hover{
+
+        .image-container{
+            border: 3px solid $white; 
+        }
+        
+       
+        img{
+            
+            background-color: $pink;
+
+        }
+
+        .img-row1{
+
+          top: -22rem;
+        
+        }
+
+        .img-row2{
+
+            top: -28rem;
+          
+          }
     }
 
  }

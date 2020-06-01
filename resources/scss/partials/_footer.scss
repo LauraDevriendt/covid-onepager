@@ -1,0 +1,170 @@
+footer{
+    background-image: url(/resources/img/footer-bg.jpg);
+    background-size: cover;
+    @extend .section-divider;
+    font-size: 0.9rem;
+
+    .contact-container{
+
+        max-width: 350px;
+        img{
+            max-width: 200px;
+            margin-bottom: 2rem;
+        }
+
+        
+
+        a{
+            text-decoration: none;
+            color: $white;
+            margin-bottom: 0.5rem;
+            transition: all 0.6s ease;
+
+            &:hover{
+                color: $pink;
+            }
+
+            address{
+                margin:0;
+
+                &:hover{
+                    color: $white;
+                }
+            }
+        
+            i{
+                margin-right: 0.5rem;
+                cursor:pointer;
+                color: $pink;
+                min-width: 30px;
+                padding: 0.5rem;
+                
+              
+                
+            }
+
+
+            .social-icon{
+                font-size: 1.2rem;
+                margin-top: 1rem;
+                margin-right: 0;
+                border: 1px solid rgba(68, 66, 66, 0.726);
+                transition: all 0.6 ease;
+                &:hover{
+                    background: white;
+                }
+            }
+
+            .fa-facebook-f{
+                color: #3b5998;
+                
+            }
+
+            .fa-twitter{
+                color: #1da1f2;
+            
+            }
+
+            .fa-linkedin{
+                color: #007bb5;
+
+            }
+
+            .fa-google-plus-g{
+                color: #ea4335;
+                
+            }
+
+            .fa-wifi{
+                color: yellow;
+               
+            }
+
+            .fa-youtube{
+                color: red;
+            }
+
+
+        }
+
+        
+    }
+
+    h4{
+        padding-top: 1rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: $white;
+    }
+
+    p{
+        color:$white
+    }
+
+    .useful-links-section{
+       
+
+        a{
+            text-decoration: none;
+            color: $white;
+            margin-bottom: 1rem;
+            margin-right: 1rem;
+            transition: all 0.6s ease;
+
+            i{
+                margin-right: 0.3rem;
+            }
+
+            &:hover{
+                color: $pink;
+            }
+        }
+    }
+
+    form{
+        position: relative;
+        margin-top: 1rem;
+        
+        .input{
+            width: 100%;
+            height: 3rem;
+            border-radius: 3rem;
+            border: 1px solid $white;
+
+            &::placeholder {
+                padding-left: 1.5rem;
+              }
+        }
+       
+        .subscribe-btn{
+            position: absolute;
+            @include general-button;
+            width: 6.5rem;
+            height: 2.8rem;
+            border-radius: 3rem;
+            right: 0.1rem;
+            top: 0.1rem;
+            
+        }
+    }
+
+    .copyright{
+        margin-top: 2rem;
+        padding-top: 3rem;
+        text-align: center;
+        border-top: 1px solid rgba(66, 68, 68, 0.726);
+    
+        p{
+            color: #8C98AF;
+
+            a{
+                text-decoration: none;
+                color:$white;
+
+                &:hover{
+                    border-bottom: 1px solid $white;
+                }
+            }
+        }
+    }
+}
