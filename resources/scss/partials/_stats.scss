@@ -5,6 +5,30 @@
     background-repeat: no-repeat;
     @extend .section-divider;
     font-size: 1.5em;
+    text-align: center;
+
+    .belgium-title{
+        @extend .h1-info-element;
+        margin: 0;
+        
+    
+   
+    }
+
+    .belgium-span{
+        @extend .span-info-element;
+        margin-bottom: 2rem;
+        font-size:0.9rem;
+        
+        
+       
+    }   
+
+    .row{
+        margin-top:1rem;
+    }
+
+
     
 
     // Virus images 

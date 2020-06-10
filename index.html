@@ -8,6 +8,8 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
+    <!-- ChartJs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
@@ -161,6 +163,8 @@
       </div>
     </section>
 
+   
+
     <!-- What is Corona  -->
     <section class="def-corona-section">
       <div class="container">
@@ -207,6 +211,99 @@
           </div>
         </div>
       </div>
+    </section>
+
+     <!-- section belgium  -->
+     <section class="stats container">
+      <h3 class="belgium-title">Corona Worldwide</h3>
+      <span class="belgium-span">The most common symptoms of COVID-19 are fever, tiredness, and dry cough.</span>
+      <div class="row text-center">
+        <figure
+          class="col-6 col-sm-6 col-lg d-flex flex-column justify-content-center align-items-center"
+        >
+          <div class="crop">
+            <img
+              class="virus-img1"
+              src="resources/img/sprite-home.png"
+              alt="virus"
+            />
+          </div>
+          <div class="stat-info stat-info1">
+            <span class="text-nowrap">Total Confirmed Cases</span>
+            <h4 id="confirmedStat">882,068</h4>
+          </div>
+        </figure>
+
+        <figure
+          class="col-6 col-sm-6 col-lg d-flex flex-column justify-content-center align-items-center"
+        >
+          <div class="crop">
+            <img
+              class="virus-img2"
+              src="resources/img/sprite-home.png"
+              alt="virus"
+            />
+          </div>
+          <div class="stat-info stat-info2">
+            <span class="text-nowrap">Total Deaths</span>
+            <h4 id="deathStat">37,384</h4>
+          </div>
+        </figure>
+
+        <figure
+          class="col-6 col-sm-6 col-lg d-flex flex-column justify-content-center align-items-center"
+        >
+          <div class="crop">
+            <img
+              class="virus-img3"
+              src="resources/img/sprite-home.png"
+              alt="virus"
+            />
+          </div>
+          <div class="stat-info stat-info3">
+            <span class="text-nowrap">Recovered</span>
+            <h4 id="recoveryStat">185,067</h4>
+          </div>
+        </figure>
+
+        <figure
+          class="col-6 col-sm-6 col-lg d-flex flex-column justify-content-center align-items-center"
+        >
+          <div class="crop">
+            <img
+              class="virus-img4"
+              src="resources/img/sprite-home.png"
+              alt="virus"
+            />
+          </div>
+          <div class="stat-info stat-info4">
+            <span class="text-nowrap">Countries</span>
+            <h4 id="countryStat">190+</h4>
+          </div>
+        </figure>
+      </div>
+      <div class="row text-center">
+        <div id="lookUp">
+         <label id="lookUpLabel"class="col-12" for="lookUp">Look up data by date and country:</label>
+           <p id="step1" class="d-inline" >Step 1:</p>
+          <input type="date" id="date" name="date">
+         <p class="d-inline" >Step 2:</p>
+         <input type="text" id="country" name="country" placeholder="country">
+         
+        </div>
+
+        <table class='table' id="tableBody">
+          
+        </table>
+
+
+      </div>
+      <div class="row">
+        <div class="container">
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
+      <br>
     </section>
     <!-- Symptoms section  -->
    
@@ -713,7 +810,7 @@
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"
     ></script>
-  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="resources/js/script.js"></script>
   </body>
 </html>
