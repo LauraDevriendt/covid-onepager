@@ -161,3 +161,40 @@ function fetchData(dateInput, countryInput) {
     alert("No data available for this date");
   }
 }
+/* using jquery to fetch data global (USED OTHER WAY TO INTERACT WITH API) */
+$(document).ready(function () {
+  init();
+});
+
+function init() {
+  var url = "https://api.covid19api.com/summary";
+
+  $.get(url, function (data) {
+    let global = data.Global;
+    let countries = data.Countries;
+    document.getElementById("countryStat").innerHTML = `${countries.length}`;
+    document.getElementById("recoveryStat").innerHTML = formatNumber(
+        global.TotalRecovered
+    );
+    document.getElementById("deathStat").innerHTML = formatNumber(
+        global.TotalDeaths
+    );
+    document.getElementById("confirmedStat").innerHTML = formatNumber(
+        global.TotalConfirmed
+    );
+  });
+}
+
+// Number formatting
+function formatNumber(value) {
+  // Nine Zeroes for Billions
+  return Math.abs(Number(value)) >= 1.0e9
+      ? Math.abs(Number(value)) / 1.0e9 + "B"
+      : // Six Zeroes for Millions
+      Math.abs(Number(value)) >= 1.0e6
+          ? Math.abs(Number(value)) / 1.0e6 + "M"
+          : // Three Zeroes for Thousands
+          Math.abs(Number(value)) >= 1.0e3
+              ? Math.abs(Number(value)) / 1.0e3 + "K"
+              : Math.abs(Number(value));
+}
