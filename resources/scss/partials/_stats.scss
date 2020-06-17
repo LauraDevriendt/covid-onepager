@@ -1,8 +1,8 @@
 .stats{
 
-    background-image: url('/resources/img/statistics-bg.png');
+    background-image: url('../img/statistics-bg.png');
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     @extend .section-divider;
     font-size: 1.5em;
     text-align: center;

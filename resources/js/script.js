@@ -40,7 +40,7 @@ function chart(country) {
       datasets: [
         {
           label: "statistics",
-          data: [country.NewConfirmed, country.NewDeaths, country.NewRecovered],
+          data: [country.Confirmed, country.Deaths, country.Recovered],
           backgroundColor: ["#FF415B", "#E13588", "#A533D7"],
           borderWidth: 1,
           borderColor: "#eee",
@@ -71,133 +71,93 @@ function chart(country) {
 
 /* fetching api for countries  */
 
-fetch("https://api.covid19api.com/summary")
+fetch("https://api.covid19api.com/countries")
   .then((response) => response.json())
   .then((data) => {
-    // defining variables
-    let output = "";
-    let outputTable = `<tr>
-    <th>Date</th>
-    <th>Country</th>
-    <th>Confirmed</th>
-    <th>Deaths</th>
-    <th>Recovered</th>
-    </tr>`;
-
-    // function starts when country is typed in
-    document.getElementById("country").addEventListener("keyup", function () {
-      outputTable = `<tr>
-      <th>Date</th>
-      <th>Country</th>
-      <th>Confirmed</th>
-      <th>Deaths</th>
-      <th>Recovered</th>
-      </tr>`;
-
-      data.Countries.forEach((country) => {
-        countryData = country.Country;
-        lowercaseCountry = countryData.toLowerCase();
-        dateInput = document.getElementById("date").value;
-        countryInput = document.getElementById("country").value;
-        lowercaseCountryInput = countryInput.toLowerCase();
-
-        // when there is data => make table and chart
-        if (
-          country.Date.includes(dateInput) == true &&
-          lowercaseCountry.includes(lowercaseCountryInput) == true &&
-          countryInput !== ""
-        ) {
-          output += `{country:"${country.Country}", confirmed: "${country.NewConfirmed}", deaths: "${country.NewDeaths}", recovered: "${country.NewRecovered}", date: "${country.Date}"}`;
-          outputTable += `
-      <tr>
-        <td>${country.Date}</td>
-        <td>${country.Country}</td>
-        <td>${country.NewConfirmed}</td>
-        <td>${country.NewDeaths}</td>
-        <td>${country.NewRecovered}</td>
-      </tr>
-      `;
-
-          tableBody = document.getElementById("tableBody");
-          tableBody.innerHTML = outputTable;
-          chart(country);
-        }
-      });
-
-      // when there is no data => clear table/chart and warning message
-      if (
-        outputTable ==
-          `<tr>
-      <th>Date</th>
-      <th>Country</th>
-      <th>Confirmed</th>
-      <th>Deaths</th>
-      <th>Recovered</th>
-      </tr>` &&
-        document.getElementById("date").value !== "" &&
-        document.getElementById("country").value !== ""
-      ) {
-        let div = document.createElement("div");
-        div.classList.add("bg-danger");
-        div.classList.add("text-center");
-        div.classList.add("mb-2");
-        div.style.cssText = "color: #fff; font-weight:900";
-        let step1 = document.getElementById("step1");
-        div.innerHTML = "No data for this country";
-        document.getElementById("lookUp").insertBefore(div, step1);
-        document.getElementById("tableBody").innerHTML = "";
-        chart("");
-      }
-
-      // when people try to fill in country before date
-      if (document.getElementById("date").value == "") {
-        alert("fill date in first");
-        document.getElementById("tableBody").innerHTML = "";
-        chart("");
-      }
-
-      // clear chart when input is empty
-      if (document.getElementById("country").value == "") {
-        document.getElementById("tableBody").innerHTML = "";
-        chart("");
-      }
+    let countries = "";
+    data.forEach((country) => {
+      countries += `${country.Slug}!`;
     });
+    countries = countries.split("!").slice(0, -1).sort();
+    document.getElementById(
+      "country"
+    ).innerHTML = `<option value="">pick country</option`;
+    for (let i = 0; i < countries.length; i++) {
+      document.getElementById(
+        "country"
+      ).innerHTML += `<option value="${countries[i]}">${countries[i]}</option>`;
+    }
   });
 
-/* using jquery to fetch data global (USED OTHER WAY TO INTERACT WITH API) */
-$(document).ready(function () {
-  init();
+document.getElementById("country").addEventListener("change", function () {
+  let dateInput = document.getElementById("date").value;
+  let countryInput = document.getElementById("country").value;
+  fetchData(dateInput, countryInput);
+});
+document.getElementById("date").addEventListener("change", function () {
+  let dateInput = document.getElementById("date").value;
+  let countryInput = document.getElementById("country").value;
+  fetchData(dateInput, countryInput);
 });
 
-function init() {
-  var url = "https://api.covid19api.com/summary";
+function fetchData(dateInput, countryInput) {
+  let today = new Date();
+  let todayString = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
+  let dateInputDate = new Date(dateInput);
+  let dateString = `${dateInputDate.getFullYear()}-${dateInputDate.getMonth()}-${dateInputDate.getDate()}`;
+  tableBody = document.getElementById("tableBody");
+  if (
+    dateInputDate < today &&
+    dateInput != "" &&
+    countryInput != "" &&
+    dateString != todayString
+  ) {
+    fetch(
+      `https://api.covid19api.com/country/${countryInput}?from=${dateInput}T00:00:00Z&to=${dateInput}T23:00:00Z`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(todayString)
+        let outputTable = `<tr>
+       <th>Date</th>
+       <th>Country</th>
+       <th>Confirmed</th>
+       <th>Deaths</th>
+       <th>Recovered</th>
+       </tr>`;
+        if (data != "") {
+          data.forEach((country) => {
+            // when there is data => make table and chart
+            if (data != "") {
+              outputTable += `
+         <tr>
+           <td>${country.Date}</td>
+           <td>${country.Country}</td>
+           <td>${country.Confirmed}</td>
+           <td>${country.Deaths}</td>
+           <td>${country.Recovered}</td>
+         </tr>
+         `;
 
-  $.get(url, function (data) {
-    let global = data.Global;
-    let countries = data.Countries;
-    document.getElementById("countryStat").innerHTML = `${countries.length}`;
-    document.getElementById("recoveryStat").innerHTML = formatNumber(
-      global.TotalRecovered
-    );
-    document.getElementById("deathStat").innerHTML = formatNumber(
-      global.TotalDeaths
-    );
-    document.getElementById("confirmedStat").innerHTML = formatNumber(
-      global.TotalConfirmed
-    );
-  });
-}
-
-// Number formatting
-function formatNumber(value) {
-  // Nine Zeroes for Billions
-  return Math.abs(Number(value)) >= 1.0e9
-    ? Math.abs(Number(value)) / 1.0e9 + "B"
-    : // Six Zeroes for Millions
-    Math.abs(Number(value)) >= 1.0e6
-    ? Math.abs(Number(value)) / 1.0e6 + "M"
-    : // Three Zeroes for Thousands
-    Math.abs(Number(value)) >= 1.0e3
-    ? Math.abs(Number(value)) / 1.0e3 + "K"
-    : Math.abs(Number(value));
+              tableBody.innerHTML = outputTable;
+              chart(country);
+            } else {
+              console.log("no data");
+            }
+          });
+        } else {
+          tableBody.innerHTML = "";
+          document.getElementById("country").value = "";
+          document.getElementById("date").value = "";
+          chart(" ");
+          alert("no data for this date");
+        }
+      });
+  }
+  if (dateInputDate > today || dateString == todayString) {
+    tableBody.innerHTML = "";
+    document.getElementById("date").value = "";
+    chart(" ");
+    alert("No data available for this date");
+  }
 }

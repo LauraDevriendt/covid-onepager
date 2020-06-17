@@ -1,6 +1,6 @@
 #symptoms {
   @extend .section-divider;
-  background-image: url("/resources/img/symptoms-bg.png");
+  background-image: url("../img/symptoms-bg.png");
 
   .symptom-title {
     @extend .h1-info-element;

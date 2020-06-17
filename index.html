@@ -23,7 +23,7 @@
       rel="stylesheet"
     />
     <!-- css -->
-    <link rel="stylesheet" href="resources/css/style.min.css" />
+    <link rel="stylesheet" href="resources/css/style.css" />
     <title>..::COVID-19::..</title>
   </head>
 
@@ -282,15 +282,16 @@
           </div>
         </figure>
       </div>
-      <div class="row text-center">
-        <div id="lookUp">
-         <label id="lookUpLabel"class="col-12" for="lookUp">Look up data by date and country:</label>
-           <p id="step1" class="d-inline" >Step 1:</p>
-          <input type="date" id="date" name="date">
-         <p class="d-inline" >Step 2:</p>
-         <input type="text" id="country" name="country" placeholder="country">
+      <div class="row">
+
+          <label class="col-6 text-left">Choose a country:</label>
+          <select class="col-6" name="country" id="country">
+          </select>
+         <label class="col-6 text-left mt-2" id="forDate"  for="date">Pick a date:</label>
+          <input class="col-6 mt-2" type="date" id="date" name="date">
          
-        </div>
+         
+
 
         <table class='table' id="tableBody">
           
@@ -588,7 +589,7 @@
       <span>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</span>
       <div class="row">
         <div class="doctor-card card text-center col-12 col-sm-5 col-lg-2">
-          <img class="card-img-top img-fluid" src="/resources/img/team01.png" alt="teammember">
+          <img class="card-img-top img-fluid" src="resources/img/team01.png" alt="teammember">
           <div class="overlay">
             <i class="fab fa-facebook-f"></i>
             <i class="fab fa-twitter"></i>
@@ -603,7 +604,7 @@
         </div>
         
         <div class="doctor-card card text-center col-12 col-sm-5 col-lg-2">
-          <img class="card-img-top img-fluid" src="/resources/img/team02.png" alt="teammember">
+          <img class="card-img-top img-fluid" src="resources/img/team02.png" alt="teammember">
           <div class="overlay">
             <i class="fab fa-facebook-f"></i>
             <i class="fab fa-twitter"></i>
@@ -617,7 +618,7 @@
         </div>       
 
         <div class="doctor-card card text-center col-12 col-sm-5 col-lg-2">
-          <img class="card-img-top img-fluid" src="/resources/img/team03.png" alt="teammember">
+          <img class="card-img-top img-fluid" src="resources/img/team03.png" alt="teammember">
           <div class="overlay">
             <i class="fab fa-facebook-f"></i>
             <i class="fab fa-twitter"></i>
@@ -631,7 +632,7 @@
         </div>       
 
         <div class="doctor-card card text-center col-12 col-sm-5 col-lg-2">
-          <img class="card-img-top img-fluid" src="/resources/img/team04.png" alt="teammember">
+          <img class="card-img-top img-fluid" src="resources/img/team04.png" alt="teammember">
           <div class="overlay">
             <i class="fab fa-facebook-f"></i>
             <i class="fab fa-twitter"></i>

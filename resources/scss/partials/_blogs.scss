@@ -1,7 +1,7 @@
 #blogs{
     @extend .section-divider;
     text-align: center;
-    background-image: url(/resources/img/latest-blog-bg.png);
+    background-image: url('../img/latest-blog-bg.png');
     background-size:cover;
 
     .blog{
